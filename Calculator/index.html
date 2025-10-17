@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <!-- Display Screen -->
+            <div class="display-container">
+                <div class="calculation-history" id="history"></div>
+                <div class="display" id="display">0</div>
+            </div>
+            
+            <!-- Button Grid -->
+            <div class="buttons">
+                <!-- First Row: Clear and Operations -->
+                <button class="btn btn-clear" onclick="clearAll()">C</button>
+                <button class="btn btn-clear" onclick="clearLast()">⌫</button>
+                <button class="btn btn-operator" onclick="inputOperator('/')" data-key="/">÷</button>
+                <button class="btn btn-operator" onclick="inputOperator('*')" data-key="*">×</button>
+                
+                <!-- Second Row: Numbers 7-9 and subtraction -->
+                <button class="btn btn-number" onclick="inputNumber('7')" data-key="7">7</button>
+                <button class="btn btn-number" onclick="inputNumber('8')" data-key="8">8</button>
+                <button class="btn btn-number" onclick="inputNumber('9')" data-key="9">9</button>
+                <button class="btn btn-operator" onclick="inputOperator('-')" data-key="-">−</button>
+                
+                <!-- Third Row: Numbers 4-6 and addition -->
+                <button class="btn btn-number" onclick="inputNumber('4')" data-key="4">4</button>
+                <button class="btn btn-number" onclick="inputNumber('5')" data-key="5">5</button>
+                <button class="btn btn-number" onclick="inputNumber('6')" data-key="6">6</button>
+                <button class="btn btn-operator" onclick="inputOperator('+')" data-key="+">+</button>
+                
+                <!-- Fourth Row: Numbers 1-3 and equals (spans 2 rows) -->
+                <button class="btn btn-number" onclick="inputNumber('1')" data-key="1">1</button>
+                <button class="btn btn-number" onclick="inputNumber('2')" data-key="2">2</button>
+                <button class="btn btn-number" onclick="inputNumber('3')" data-key="3">3</button>
+                <button class="btn btn-equals" onclick="calculate()" data-key="Enter" rowspan="2">=</button>
+                
+                <!-- Fifth Row: Zero (spans 2 columns) and decimal -->
+                <button class="btn btn-number btn-zero" onclick="inputNumber('0')" data-key="0">0</button>
+                <button class="btn btn-number" onclick="inputDecimal()" data-key=".">.</button>
+            </div>
+            
+            <!-- Footer -->
+            <div class="calculator-footer">
+                <p>Press <kbd>Esc</kbd> to clear • <kbd>Enter</kbd> to calculate</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
